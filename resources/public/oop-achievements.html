@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Achievements</div>
+    <div class="panel-body">
+        <div ng-repeat="achievement in achievements">
+            <div class="alert" role="alert"
+                 ng-class="{'alert-success': isSuccess(achievement), 'alert-warning': isWarning(achievement), 'alert-danger': isFailure(achievement)}">
+                <strong>{{achievement.achievementName}}</strong>: {{achievement.achiever}}</div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Build Breaker Top</div>
+    <div class="panel-body">
+        <div ng-repeat="buildBreaker in buildBreakerTop">
+            <div class="alert alert-danger" role="alert">
+                {{$index + 1}}. <strong>{{buildBreaker.name}}</strong> Broke {{buildBreaker.buildCount}} builds</div>
+        </div>
+    </div>
+</div>

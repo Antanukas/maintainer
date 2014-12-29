@@ -1,0 +1,4 @@
+{ :jenkins-root "http://online-ci.omnitel.lan:8080/jenkins/"
+  :gitlab-root "http://online-tooling.omnitel.lan/api/v3/"
+  :cache-threshold 20000
+  :private-token "rJt6dNGWJ29e9Nfbq2po"}
