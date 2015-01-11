@@ -12,8 +12,9 @@
   (route/not-found "Not Found"))
 
 (defroutes api-routes
-  (GET "/achievements" [] achievements-ctrl/get-achievements)
-  (GET "/achievements/buildBreaker" [] achievements-ctrl/get-build-breaker-top))
+  (GET "/rest/teams" [] achievements-ctrl/get-teams)
+  (GET "/rest/teams/:team/achievements" [team] (achievements-ctrl/get-achievements team))
+  (GET "/rest/teams/:team/achievements/buildBreaker" [team] (achievements-ctrl/get-build-breaker-top team)))
 
 (def site (wrap-defaults site-routes site-defaults))
 (def rest-api

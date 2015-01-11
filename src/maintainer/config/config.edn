@@ -1,4 +1,10 @@
 { :jenkins-root "http://online-ci.omnitel.lan:8080/jenkins/"
   :gitlab-root "http://online-tooling.omnitel.lan/api/v3/"
   :cache-threshold 20000
-  :private-token "rJt6dNGWJ29e9Nfbq2po"}
+  :private-token "rJt6dNGWJ29e9Nfbq2po"
+  :teams [{ :team "CDS"
+            :jenkins-view "CDS-DEV-MONITOR"
+            :excluded-jobs #{"public-web-master-build" , "devops-smx-dev", "devops-gf-dev"}}
+          { :team "OC"
+            :jenkins-view "OC-DEV-MONITOR"
+            :excluded-jobs #{"public-web-master-build" , "devops-smx-dev", "devops-gf-dev"}}]}

@@ -1,9 +1,15 @@
+<div class="jumbotron">
+    <h1>Current maintainer: Antanas Bastys</h1>
+    <p>Maintain maintain maintain</p>
+</div>
 <div class="panel panel-default">
     <div class="panel-heading">Achievements</div>
     <div class="panel-body">
         <div ng-repeat="achievement in achievements">
             <div class="alert" role="alert"
-                 ng-class="{'alert-success': isSuccess(achievement), 'alert-warning': isWarning(achievement), 'alert-danger': isFailure(achievement)}">
+                 ng-class="{'alert-success': isSuccess(achievement),
+                           'alert-warning' : isWarning(achievement),
+                           'alert-danger'  : isFailure(achievement)}">
                 <strong>{{achievement.achievementName}}</strong>: {{achievement.achiever}}</div>
         </div>
     </div>

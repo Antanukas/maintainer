@@ -3,7 +3,10 @@
              [maintainer.core.achievements-service :as service]))
 
 
-(defn get-achievements [request]
+(defn get-teams [request]
+  (response (service/get-teams)))
+
+(defn get-achievements [team]
   (response
    [{ :achievementName "Most commits"
       :achiever "Antanas Bastys"
@@ -18,12 +21,12 @@
       :achiever "Antanas Bastys"
       :severity "success" }
     { :achievementName "Master of build breaking"
-      :achiever (service/get-best-build-breaker "CDS-DEV-MONITOR")
+      :achiever (service/get-best-build-breaker team)
       :severity "failure" }
 ]))
 
-(defn get-build-breaker-top [request]
+(defn get-build-breaker-top [team]
   (response
-   (for [[name build-count] (service/get-culprits-top "CDS-DEV-MONITOR")
+   (for [[name build-count] (service/get-culprits-top team)
          :let [item {:name name :buildCount build-count}]]
      item)))
